@@ -9,20 +9,3 @@ menu.setAttribute('aria-expanded','false');
 menu.setAttribute('aria-label','Άνοιγμα μενού');
 menu.textContent='☰'}));
 document.getElementById('privacy-button').addEventListener('click',()=>document.getElementById('privacy').showModal());
-
-
-// Keep bookmarks from the original single-page site working.
-const legacyPages = { "#about": "about.html", "#services": "services.html", "#approach": "approach.html" };
-
-function redirectLegacySection() {
-  if (location.pathname.endsWith("/") || location.pathname.endsWith("/index.html")) {
-    const target = legacyPages[location.hash];
-
-    if (target) location.replace(target);
-
-  }
-}
-redirectLegacySection();
-
-window.addEventListener("hashchange", redirectLegacySection);
-
